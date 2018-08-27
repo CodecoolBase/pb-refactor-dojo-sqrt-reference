@@ -1,4 +1,4 @@
-** How to conduct a refactor workshop? **
+## How to conduct a refactor workshop?
 
 Goal: the goal of the workshop is to familiarize students with the process of clean code refactoring through "forcing" them to participate.
 Setting: students are sitting in a half circle around a TV or projector screen. The facilitator sits in front of them next to the TV and have a laptop which screen is displayed on the TV. The facilitator only codes what the students are saying to him/her.
