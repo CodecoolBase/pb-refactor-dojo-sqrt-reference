@@ -1,32 +1,25 @@
-import random
 import math
 
-s = 0
-d = {}
-with open('100.txt') as f:
-    for a in f:
-        p = ''
-        for b in a:
-            a_s = a.strip()
-            if b != ',':
-                p += b
-            else:
-                if a_s not in d:
-                    d[a_s] = int(p)
-                else:
-                    d[a_s] += int(p)
-                p = ''
-        if a_s not in d:
-            d[a_s] = int(p)
-        else:
-            d[a_s] += int(p)
+def get_lines_sum(filename):
+    lines_sum = []
+    with open(filename) as file:
+        for line in file:
+            lines_sum.append(sum([int(number_str) for number_str in line.strip().split(',')]))
+    return lines_sum
 
-s += math.sqrt(d['23,21,5'])
-s += math.sqrt(d['342,2,5'])
-s += math.sqrt(d['32,1,777'])
-s += math.sqrt(d['234,645,223'])
-s += math.sqrt(d['243,646,2342'])
-s += math.sqrt(d['6346,3434,222'])
-s += math.sqrt(d['3,6,2'])
 
-print(s)
+def get_sum_sqrt(numbers):
+    sum_sqrt = 0
+
+    for number in numbers:    
+        sum_sqrt += math.sqrt(number)
+    return sum_sqrt
+
+
+def main():
+    lines_sum = get_lines_sum('100.txt')
+    sum_sqrt = get_sum_sqrt(lines_sum)
+    print(sum_sqrt)
+
+if __name__ == '__main__':
+    main()
